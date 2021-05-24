@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchGithubService } from '../search-github.service';
 
 @Component({
   selector: 'app-user',
@@ -6,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
+  username!: string;
+  searchGithubService: SearchGithubService;
 
-  constructor() { }
+  submitUserName(){
+    this.searchGithubService.getUserData(this.username)
+  }
+
+
+
+  constructor(searchGithubService: SearchGithubService) { 
+    this.searchGithubService = searchGithubService
+  }
 
   ngOnInit(): void {
   }
