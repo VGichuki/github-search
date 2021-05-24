@@ -10,7 +10,7 @@ export class SearchGithubService {
 
   user : User;
   repo : Repo;
-  repoData = []
+  repoData: any = []
   newUserData: any = []
   
   constructor(private http:HttpClient) {
@@ -44,7 +44,7 @@ export class SearchGithubService {
     for(let i=0; i<response.length; i++){
 
       this.newUserData = new Repo(response(i).name, response(i).description, response(i).updates_at, response(i).clone_url, response(i).language)
-      this.repo.push(this.newUserData);
+      this.repoData.push(this.newUserData);
 
 
       resolve()

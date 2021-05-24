@@ -9,6 +9,7 @@ import { RepoComponent } from './git-results/repo.component';
 import { UserComponent } from './git-form/user.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContactComponent } from './contact/contact.component';
     RepoComponent,
     UserComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
