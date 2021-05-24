@@ -1,1 +1,19 @@
+<div class="row">
+<div class="col-md-6">
+    <h3>{{user.login}}</h3>
+    <img src="{{user.avatar_url}}" alt="">
+    <p>Bio {{user.bio}}</p>
+    <p>Date created {{user.created_at}}</p>
+    <p>No. of repos {{user.public_repos}}</p>
+</div>
+<div class="col-md-6">
+    <div *ngFor = "let repoDetail of repoDetails">
+        <!-- <h3>{{repoDetail?.name}} | {{repoDetail?.clone_url}}</h3>
+        <p>{{repoDetail?.description}}</p>
+        <p>{{repoDetail?.language}}</p>
+        <small>{{repoDetail?.updated_at}}</small> -->
 
+    </div>
+    
+</div>
+</div>

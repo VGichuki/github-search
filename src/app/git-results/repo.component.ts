@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchGithubService } from '../search-github.service';
+import { User } from '../user'
+import { Repo } from '../repo'
 
 @Component({
   selector: 'app-repo',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoComponent implements OnInit {
 
-  constructor() { }
+  user!: User; 
+  repoDetails = [];
+  searchGithubService: SearchGithubService;
 
-  ngOnInit(): void {
+  constructor(searchGithubService: SearchGithubService) { 
+    this.searchGithubService = searchGithubService
+  }
+
+  ngOnInit() {
+    this.user = this.searchGithubService.user
+    this.repoDetails = this.searchGithubService.repoData
+    console.log(this.repoDetails)
   }
 
 }
